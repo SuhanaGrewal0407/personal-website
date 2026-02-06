@@ -738,67 +738,41 @@ padding: 0px 60px 150px;
     opacity: 0;
 }
 
-/* --- RESEARCH PAPER LINKS --- */
-.paper-link {
-    text-decoration: none;
-    color: inherit; /* Keeps text black */
-    transition: color 0.3s ease;
-}
+/* --- CORRECTED FIX FOR RESEARCH LINKS --- */
 
-.paper-link:hover {
-    color: #9D50FF; /* Turns purple on hover */
-    text-decoration: underline;
-}
-
-/* Optional: Make the image fade slightly on hover so users know it's clickable */
-.paper-preview a img {
+/* 1. TEXT LINKS: Force White always (Normal & Hover) */
+.research-text a {
+    color: #ffffff !important;      /* Always White */
+    text-decoration: none !important; /* No Underline */
+    font-weight: normal;
+    border: none;
     transition: opacity 0.3s ease;
 }
 
-.paper-preview a:hover img {
+/* On hover, just fade slightly (Do NOT turn purple) */
+.research-text a:hover {
+    color: #ffffff !important;      /* Keep White */
+    opacity: 0.8;                   /* Subtle fade effect */
+    text-decoration: none !important;
+}
+
+/* 2. IMAGE LINKS: Fix Alignment */
+.paper-preview a {
+    display: flex;             /* This acts like a container */
+    justify-content: center;   /* This centers the image inside it */
+    width: 100%;               /* Ensures it fills the space to center properly */
+    text-decoration: none;
+    border: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Fade image slightly on hover */
+.paper-preview a:hover {
     opacity: 0.8;
 }
 
-/* --- CV LINK STYLING --- */
-.cv-link {
-    text-decoration: none; /* Removes the underline */
-    color: #9D50FF;        /* Sets it to your Purple */
-    font-weight: 600;      /* Makes it bold */
-    font-size: 1.1rem;
-    
-    /* Aligns the icon and text perfectly */
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; 
-    
-    transition: all 0.3s ease;
-}
-
-/* Hover Effect: Turns Green and lifts up */
-.cv-link:hover {
-    color: #00D2A0; 
-    transform: translateY(-2px);
-}
-
-/* --- FIX FOR RESEARCH LINKS --- */
-
-/* 1. Reset the link style inside research cards */
-.research-text a {
-    color: #ffffff !important; /* Force text WHITE */
-    text-decoration: none !important; /* Remove UNDERLINE */
-    font-weight: normal; /* Keep original weight */
-    border-bottom: none;
-    transition: opacity 0.3s ease;
-}
-
-/* 2. Optional: Slight fade when you hover so users know it's clickable */
-.research-text a:hover {
-    opacity: 0.8; 
-}
-
-/* 3. Ensure the image link doesn't have a border either */
-.paper-preview a {
-    text-decoration: none;
-    border: none;
-    display: block; /* Fixes any weird spacing */
+/* Ensure the image itself behaves */
+.paper-preview a img {
+    display: block;
+    margin: 0 auto; /* Extra safety to force centering */
 }
