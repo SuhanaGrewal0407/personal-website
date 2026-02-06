@@ -779,3 +779,26 @@ padding: 0px 60px 150px;
     color: #00D2A0; 
     transform: translateY(-2px);
 }
+
+/* --- FIX FOR RESEARCH LINKS --- */
+
+/* 1. Reset the link style inside research cards */
+.research-text a {
+    color: #ffffff !important; /* Force text WHITE */
+    text-decoration: none !important; /* Remove UNDERLINE */
+    font-weight: normal; /* Keep original weight */
+    border-bottom: none;
+    transition: opacity 0.3s ease;
+}
+
+/* 2. Optional: Slight fade when you hover so users know it's clickable */
+.research-text a:hover {
+    opacity: 0.8; 
+}
+
+/* 3. Ensure the image link doesn't have a border either */
+.paper-preview a {
+    text-decoration: none;
+    border: none;
+    display: block; /* Fixes any weird spacing */
+}
