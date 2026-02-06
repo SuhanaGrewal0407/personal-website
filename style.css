@@ -464,7 +464,12 @@ padding: 0px 60px 150px;
     font-weight: 600;
     font-size: 1.1rem;
     display: block;
-    margin-bottom: -25px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+/* Optional: Only needed if you use <p> tags for the description */
+.research-text p {
+    margin-top: 0;
 }
 
 /* Mobile Responsiveness */
