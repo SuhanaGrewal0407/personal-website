@@ -390,13 +390,13 @@ padding: 0px 60px 150px;
 }
 
 
-/* --- FINAL RESEARCH SECTION (Tall Cards & Equal Images) --- */
+/* --- RESEARCH SECTION: "FIRST IMAGE" LOOK --- */
 
 .research-grid {
     display: grid;
-    /* Forces 3 equal columns */
+    /* Keeps the columns balanced but not too wide */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 50px; 
+    gap: 30px; /* Tighter gap like the first image */
     align-items: stretch;
     padding: 20px 0;
     margin-top: 30px;
@@ -409,13 +409,13 @@ padding: 0px 60px 150px;
     
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
     border-radius: 20px;
-    padding: 40px 30px;
+    padding: 30px 25px; /* Standard padding */
     color: white;
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     
-    /* FIX: Force them to be TALL rectangles, not squares */
-    min-height: 550px; 
+    /* Forces them to be tall rectangles, matching your first screenshot */
+    min-height: 500px; 
     box-sizing: border-box;
     transition: transform 0.3s ease;
 }
@@ -424,74 +424,52 @@ padding: 0px 60px 150px;
     transform: translateY(-10px);
 }
 
-/* --- THE PREVIEW CONTAINER --- */
+/* --- THE IMAGE CONTAINER --- */
 .paper-preview {
+    /* Grows to fill the empty space, centering the image */
     flex: 1; 
     display: flex;
     align-items: center; 
     justify-content: center;
+    
     width: 100%;
-    margin-bottom: 30px;
-    border: none;
-    outline: none;
+    margin-bottom: 25px;
 }
 
-.paper-preview a {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    border: none;
-    outline: none;
-}
-
-/* --- THE IMAGE (Strictly Equal Sizing) --- */
+/* --- THE IMAGE ITSELF (Strict Uniformity) --- */
 .paper-preview img {
-    /* FIX: Fixed pixel dimensions guarantee equality */
-    width: 200px; 
-    height: 280px; 
+    /* Fixed pixel size to ensure 100% equality across all cards */
+    width: 180px; 
+    height: 250px; 
     
-    /* Ensures the image fills that box without stretching weirdly */
+    /* Crop nicely if the image file is a different ratio */
     object-fit: cover; 
-    object-position: top; /* Shows the top of the paper (title) */
+    object-position: top;
     
-    /* The Paper Look */
+    /* The "Clean Paper" Look */
     background-color: white; 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
     border-radius: 2px;
     
+    /* No borders */
     border: none !important;
     outline: none !important;
     display: block;
     margin: 0 auto;
 }
 
-.paper-preview a:hover img {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
-}
-
 /* --- TEXT STYLING --- */
 .research-text {
-    font-family: 'Avenir Next', 'Inter', sans-serif;
-    color: white;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: auto;
     flex-shrink: 0;
-}
-
-.research-text strong {
-    font-weight: 600;
-    font-size: 1.15rem;
-    display: block;
-    margin-bottom: 12px;
+    margin-top: auto;
+    font-size: 0.95rem; /* Clean, readable size */
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 900px) {
     .research-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
 }
 /* --- EXPERIENCE CAROUSEL STYLES --- */
