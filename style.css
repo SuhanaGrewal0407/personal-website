@@ -439,25 +439,23 @@ scroll-margin-top: 65px;
     text-decoration: none;
 }
 
-/* --- THE PAPER IMAGE (Strict Uniformity) --- */
+/* --- THE PAPER IMAGE (Strict Uniformity & No Stretching) --- */
 .paper-preview img {
-    /* 1. WIDTH: Controls size relative to card */
+    /* 1. WIDTH & SHAPE: Defines the uniform white box */
     width: 75% !important;
-    max-width: 260px; /* Prevents it from getting too huge on big screens */
-    
-    /* 2. ASPECT RATIO: Forces the tall "Paper" shape */
+    max-width: 260px; 
     aspect-ratio: 0.7 !important;
     
-    /* 3. CROP: Ensures screenshots fill the shape perfectly without squishing */
-    object-fit: cover !important;
-    object-position: top center !important;
+    /* 2. THE FIX: 'contain' fits the image inside without stretching */
+    object-fit: contain !important;
+    object-position: center !important;
     
-    /* 4. PAPER LOOK: White background + Shadow */
+    /* 3. PAPER LOOK: White background + Shadow */
     background-color: white !important;
     box-shadow: 0 15px 30px rgba(0,0,0,0.25) !important;
     border-radius: 4px !important;
     
-    /* 5. CLEAN UP borders */
+    /* 4. CLEAN UP */
     border: none !important;
     outline: none !important;
     display: block;
@@ -480,7 +478,7 @@ scroll-margin-top: 65px;
 }
 
 .research-text strong {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.15rem;
     display: block;
     margin-bottom: 10px;
