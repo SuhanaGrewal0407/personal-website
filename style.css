@@ -451,25 +451,33 @@ padding: 0px 60px 150px;
     border: 1px solid #eee;
 }
 
-/* The Text Description */
+/* --- FIXED SPACING FOR RESEARCH TEXT --- */
 .research-text {
     font-family: 'Avenir Next', 'Inter', sans-serif;
     color: white;
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: auto; /* Pushes text to align nicely */
+    margin-top: auto; 
 }
 
+/* 1. The Title: Zero spacing below */
 .research-text strong {
     font-weight: 600;
     font-size: 1.1rem;
     display: block;
-    margin-bottom: 5px;
-    line-height: 1.2;
+    
+    /* Change this to 0px to kill the gap */
+    margin-bottom: 0px; 
+    
+    /* Tighten the title's own line spacing */
+    line-height: 1.2; 
 }
-/* Optional: Only needed if you use <p> tags for the description */
+
+/* 2. The Description: Zero spacing above */
+/* This forces any <p> tag to sit right up against the title */
 .research-text p {
-    margin-top: 0;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 /* Mobile Responsiveness */
