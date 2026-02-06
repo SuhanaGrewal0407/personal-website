@@ -392,15 +392,15 @@ padding: 0px 60px 150px;
 
 /* --- RESEARCH SECTION: EXACT MATCH TO REFERENCE IMAGE --- */
 
-/* ================================================= */
-/* --- FINAL FIXED RESEARCH SECTION (Strict Mode) --- */
-/* ================================================= */
+/* ======================================= */
+/* --- FINAL RESEARCH SECTION (Clean) --- */
+/* ======================================= */
 
 .research-grid {
     display: grid;
-    /* Forces 3 equal columns */
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px; /* Standard clean spacing */
+    /* 3 Equal Columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px; /* Spacious gap like the photo */
     align-items: stretch;
     margin-top: 40px;
     padding-bottom: 40px;
@@ -410,20 +410,17 @@ padding: 0px 60px 150px;
     display: flex;
     flex-direction: column;
     
-    /* The Gradient */
+    /* Gradient Background */
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
+    border-radius: 20px;
+    padding: 35px 25px; /* Balanced padding */
     
-    /* Shape & Spacing */
-    border-radius: 24px;
-    padding: 30px 20px; /* Vertical padding, tighter side padding */
-    
-    /* Forces Tall Rectangle Shape */
-    min-height: 600px; 
+    /* Forces the Tall, Elegant Rectangle shape */
+    min-height: 550px; 
     
     text-align: center;
     color: white;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
 }
 
@@ -432,42 +429,46 @@ padding: 0px 60px 150px;
 }
 
 /* --- THE IMAGE CONTAINER --- */
-/* This invisible box takes up all the empty space to center the image */
 .paper-preview {
+    /* Takes up all empty vertical space to float image in center */
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .paper-preview a {
     display: block;
+    width: 100%;
     border: none;
     outline: none;
     text-decoration: none;
 }
 
-/* --- THE WHITE BOXES (Strictly Equal & Rounded) --- */
+/* --- THE PAPER IMAGE (The Fix) --- */
 .paper-preview img {
-    /* 1. FORCE EXACT SIZE (This fixes the alignment) */
-    width: 240px !important;
-    height: 320px !important;
+    /* 1. SIZE: Fill 85% of the card width */
+    width: 85%;
     
-    /* 2. FORCE ROUNDING */
-    border-radius: 15px !important;
+    /* 2. SHAPE: Force it to be a tall paper rectangle (A4 style) */
+    aspect-ratio: 0.7; 
     
-    /* 3. VISUAL STYLE */
-    object-fit: cover; /* Ensures image fills the box without stretching */
-    object-position: top; /* Shows the title part of the paper */
+    /* 3. FIT: Ensure the screenshot fills that shape completely */
+    object-fit: fill; 
+    object-position: top;
+    
+    /* 4. STYLE: White background & Shadow */
     background-color: white;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* The "Float" shadow */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    border-radius: 4px; /* Slight rounding like real paper */
     
-    /* Remove any old borders */
+    /* Remove borders */
     border: none !important;
     outline: none !important;
     display: block;
+    margin: 0 auto;
 }
 
 /* Hover Effect */
@@ -478,38 +479,28 @@ padding: 0px 60px 150px;
 
 /* --- TEXT STYLING --- */
 .research-text {
-    flex-shrink: 0; /* Prevents text from squishing */
+    flex-shrink: 0;
     margin-top: auto;
-    padding: 0 10px;
-}
-
-.research-text strong {
     font-family: 'Avenir Next', 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    display: block;
-    margin-bottom: 8px;
     color: white;
 }
 
-.research-text a {
-    color: white !important;
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    opacity: 0.95;
+.research-text strong {
+    font-weight: 700;
+    font-size: 1.15rem;
+    display: block;
+    margin-bottom: 8px;
 }
 
 /* --- MOBILE --- */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     .research-grid {
-        grid-template-columns: 1fr; /* Stack them on smaller screens */
+        grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+    /* On mobile, limit width so it doesn't get huge */
     .paper-preview img {
-        width: 200px !important; /* Slightly smaller on mobile */
-        height: 280px !important;
+        max-width: 250px; 
     }
 }
 
