@@ -380,43 +380,36 @@ scroll-margin-top: 65px;
     }
 }
 
-/* --- RESEARCH SECTION STYLES --- */
+/* ======================================= */
+/* --- RESEARCH SECTION (Clean & Uniform) --- */
+/* ======================================= */
 
 .research-section {
-    min-height: auto;    
-padding: 0px 60px 150px;
+    padding: 0 60px 150px;
     background-color: #E6F7FA;
-    scroll-margin-top: 80px; 
+    scroll-margin-top: 80px;
 }
-
-
-/* --- RESEARCH SECTION: EXACT MATCH TO REFERENCE IMAGE --- */
-
-/* ======================================= */
-/* --- FINAL RESEARCH SECTION (Clean) --- */
-/* ======================================= */
 
 .research-grid {
     display: grid;
-    /* 3 Equal Columns */
+    /* Forces 3 equal columns */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 40px; /* Spacious gap like the photo */
+    gap: 40px; 
+    /* Ensures all cards stretch to the same height */
     align-items: stretch;
     margin-top: 40px;
-    padding-bottom: 40px;
 }
 
 .research-card {
     display: flex;
     flex-direction: column;
     
-    /* Gradient Background */
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
     border-radius: 20px;
-    padding: 35px 25px; /* Balanced padding */
+    padding: 40px 30px;
     
-    /* Forces the Tall, Elegant Rectangle shape */
-    min-height: 550px; 
+    /* FORCE TALL RECTANGLE SHAPE */
+    min-height: 600px; 
     
     text-align: center;
     color: white;
@@ -430,48 +423,48 @@ padding: 0px 60px 150px;
 
 /* --- THE IMAGE CONTAINER --- */
 .paper-preview {
-    /* Takes up all empty vertical space to float image in center */
+    /* Takes up all empty vertical space to center the paper */
     flex: 1;
     display: flex;
     align-items: center; 
     justify-content: center;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .paper-preview a {
     display: block;
     width: 100%;
     border: none;
-    outline: none;
     text-decoration: none;
 }
 
-/* --- THE PAPER IMAGE (The Fix) --- */
+/* --- THE PAPER IMAGE (Strict Uniformity) --- */
 .paper-preview img {
-    /* 1. SIZE: Fill 85% of the card width */
-    width: 85%;
+    /* 1. WIDTH: Controls size relative to card */
+    width: 75% !important;
+    max-width: 260px; /* Prevents it from getting too huge on big screens */
     
-    /* 2. SHAPE: Force it to be a tall paper rectangle (A4 style) */
-    aspect-ratio: 0.7; 
+    /* 2. ASPECT RATIO: Forces the tall "Paper" shape */
+    aspect-ratio: 0.7 !important;
     
-    /* 3. FIT: Ensure the screenshot fills that shape completely */
-    object-fit: fill; 
-    object-position: top;
+    /* 3. CROP: Ensures screenshots fill the shape perfectly without squishing */
+    object-fit: cover !important;
+    object-position: top center !important;
     
-    /* 4. STYLE: White background & Shadow */
-    background-color: white;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-    border-radius: 4px; /* Slight rounding like real paper */
+    /* 4. PAPER LOOK: White background + Shadow */
+    background-color: white !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25) !important;
+    border-radius: 4px !important;
     
-    /* Remove borders */
+    /* 5. CLEAN UP borders */
     border: none !important;
     outline: none !important;
     display: block;
     margin: 0 auto;
 }
 
-/* Hover Effect */
+/* Hover Effect: Subtle Lift */
 .paper-preview a:hover img {
     transform: scale(1.02);
     transition: transform 0.3s ease;
@@ -483,28 +476,39 @@ padding: 0px 60px 150px;
     margin-top: auto;
     font-family: 'Avenir Next', 'Inter', sans-serif;
     color: white;
+    padding: 0 10px;
 }
 
 .research-text strong {
     font-weight: 700;
     font-size: 1.15rem;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    line-height: 1.3;
 }
 
-/* --- MOBILE --- */
+.research-text a {
+    color: white !important;
+    opacity: 0.9;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 900px) {
     .research-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: 1fr; /* Stack cards on phone */
+        gap: 50px;
     }
-    /* On mobile, limit width so it doesn't get huge */
+    
+    .research-card {
+        min-height: 500px; /* Slightly shorter cards on phone */
+    }
+
     .paper-preview img {
-        max-width: 250px; 
+        width: 60% !important; /* Smaller image on phone */
     }
 }
-
-/* --- EXPERIENCE CAROUSEL STYLES --- */
 
 .experience-section {
     padding: 0 60px 150px;
@@ -829,85 +833,4 @@ a.cv-link:hover {
 a.cv-link i {
     font-size: 1.1rem !important;
     color: inherit !important;
-}
-
-/* --- FINAL RESEARCH CARD FIX (Centered & Blended) --- */
-
-/* --- RESEARCH GRID (Forces Equal Height) --- */
-.research-grid {
-    display: grid;
-    /* This creates the columns */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    
-    /* CRITICAL: This forces all cards in a row to stretch to the tallest one's height */
-    align-items: stretch; 
-}
-
-/* --- RESEARCH CARD (Flex Layout) --- */
-.research-card {
-    display: flex;
-    flex-direction: column; /* Stacks image on top of text */
-    
-    background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
-    border-radius: 20px;
-    padding: 30px; 
-    color: white;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    
-    /* CRITICAL: Ensures the card fills the grid slot */
-    height: 100%; 
-    box-sizing: border-box; 
-    
-    transition: transform 0.3s ease;
-}
-
-/* --- IMAGE CONTAINER (The Spacer) --- */
-.paper-preview {
-    /* This makes the container "grow" to fill all empty vertical space */
-    flex: 1; 
-    
-    /* This aligns the image in the dead center of that space */
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    
-    width: 100%;
-    margin-bottom: 20px;
-    min-height: 200px; /* Ensures there is always space for the image */
-}
-
-/* --- THE IMAGE ITSELF --- */
-.paper-preview a {
-    display: inline-block;
-    width: auto; 
-    max-width: 100%;
-}
-
-.paper-preview img {
-    /* ENLARGE: Use percentage so they grow with the card, up to a max point */
-    width: 85%; 
-    max-width: 350px; /* Ensures they don't get too crazy big on huge screens */
-    height: auto;
-    
-    /* REMOVE OUTLINE: Get rid of shadow, background, and rounded corners */
-    box-shadow: none !important;
-    background-color: transparent !important;
-    border-radius: 0 !important;
-    border: none !important;
-    
-    display: block;
-    margin: 0 auto; /* Ensures centering */
-}
-
-/* --- TEXT AT BOTTOM --- */
-.research-text {
-    /* Prevents text from pushing the image weirdly */
-    flex-shrink: 0; 
-}
-
-/* Hover Effect */
-.research-card:hover {
-    transform: translateY(-10px);
 }
