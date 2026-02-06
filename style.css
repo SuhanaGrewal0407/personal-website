@@ -1,4 +1,4 @@
- /*
+/*
 html {
     scroll-behavior: smooth;
 }
@@ -78,7 +78,7 @@ nav a:hover {
     max-width: 1100px; 
     /* Removed the large top margin so it sits higher up again */
     margin: 0 auto; 
-width: 100%
+    width: 100%
 }
 
 /* Typography */
@@ -143,7 +143,7 @@ margin-bottom: -0.2em;
 
 .intro-text {
     font-size: 1.25rem;
-    line-height: 1.6;
+    line-height: 1.6; 
     
     margin-bottom: 30px; 
     
@@ -193,7 +193,7 @@ margin-bottom: -0.2em;
     0% { width: 0; }
     40% { width: 100%; } 
     90% { width: 100%; } 
-    100% { width: 0; }   
+    100% { width: 0; }    
 }
 
 @media (max-width: 768px) {
@@ -215,14 +215,11 @@ margin-bottom: -0.2em;
 
 /* --- ABOUT SECTION STYLES --- */
 
-/* --- PASTE THIS AT THE VERY BOTTOM OF YOUR CSS FILE --- */
-
-/* ABOUT SECTION STYLES */
 .about-section {
     padding: 20px 60px 100px;
     background-color: #E6F7FA;
     min-height: 100vh;
-scroll-margin-top: 65px;
+    scroll-margin-top: 65px;
 }
 
 .container {
@@ -439,23 +436,25 @@ scroll-margin-top: 65px;
     text-decoration: none;
 }
 
-/* --- THE PAPER IMAGE (Strict Uniformity & No Stretching) --- */
+/* --- THE PAPER IMAGE (Strict Uniformity & Fit) --- */
 .paper-preview img {
-    /* 1. WIDTH & SHAPE: Defines the uniform white box */
+    /* 1. WIDTH: Controls size relative to card */
     width: 75% !important;
     max-width: 260px; 
+    
+    /* 2. ASPECT RATIO: Forces the tall "Paper" shape */
     aspect-ratio: 0.7 !important;
     
-    /* 2. THE FIX: 'contain' fits the image inside without stretching */
+    /* 3. CROP: 'contain' fits the image inside WITHOUT stretching */
     object-fit: contain !important;
     object-position: center !important;
     
-    /* 3. PAPER LOOK: White background + Shadow */
+    /* 4. PAPER LOOK: White background + Shadow */
     background-color: white !important;
     box-shadow: 0 15px 30px rgba(0,0,0,0.25) !important;
     border-radius: 4px !important;
     
-    /* 4. CLEAN UP */
+    /* 5. CLEAN UP borders */
     border: none !important;
     outline: none !important;
     display: block;
@@ -487,7 +486,6 @@ scroll-margin-top: 65px;
     margin-bottom: 4px; 
     
     line-height: 1.2;
-};
 }
 
 .research-text a {
@@ -512,6 +510,8 @@ scroll-margin-top: 65px;
         width: 60% !important; /* Smaller image on phone */
     }
 }
+
+/* --- EXPERIENCE SECTION --- */
 
 .experience-section {
     padding: 0 60px 150px;
@@ -546,11 +546,10 @@ scroll-margin-top: 65px;
 .experience-card {
     box-sizing: border-box;
     
-    /* FORCE 3 CARDS PER ROW: */
-    /* (100% width - 40px for the 2 gaps) divided by 3 */
+    /* FORCE 3 CARDS PER ROW */
     flex: 0 0 calc((100% - 40px) / 3);
     max-width: calc((100% - 40px) / 3);
-    min-width: 0; /* Prevents flex items from getting stuck */
+    min-width: 0; 
     
     padding: 40px 30px;
     border-radius: 20px;
