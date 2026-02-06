@@ -808,62 +808,81 @@ a.cv-link i {
     color: inherit !important;
 }
 
-/* --- FINAL RESEARCH CARD ALIGNMENT FIX --- */
+/* --- FINAL RESEARCH CARD FIX (Centered & Blended) --- */
+
+.research-grid {
+    display: grid;
+    /* This ensures all cards in a row are naturally the same height */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: stretch; /* Crucial for equal height columns */
+}
 
 .research-card {
-    /* 1. Flexbox Vertical Layout */
+    /* 1. Flexbox Layout to stack image over text */
     display: flex;
     flex-direction: column;
     
     /* 2. Visuals */
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
     border-radius: 20px;
-    padding: 30px; 
+    padding: 30px 20px; /* Slightly less side padding for the blend effect */
     color: white;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
     
-    /* 3. Sizing */
-    height: 100%;      /* Stretches to fill the grid row */
-    min-height: 480px; /* Ensures enough space for centering */
+    /* 3. Sizing: Ensures they are tall enough to center nicely */
+    height: auto;
+    min-height: 500px; 
 }
 
 .paper-preview {
-    /* 4. THE MAGIC CENTERING FIX */
-    /* This makes the image container grow to fill all empty space... */
-    flex: 1;
+    /* 4. THE CENTERING MAGIC */
+    /* grow to fill space */
+    flex: 1; 
     display: flex;
-    
-    /* ...and these 2 lines force the content to the dead center */
-    justify-content: center;
+    /* center vertically and horizontally */
     align-items: center; 
+    justify-content: center;
     
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* Reset the link to behave nicely */
+/* Reset the link container */
 .paper-preview a {
-    display: inline-block; /* Wraps the image tightly */
+    display: inline-block;
+    width: 85%; /* Controls how wide the paper appears */
     transition: opacity 0.3s ease;
 }
 
 .paper-preview img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 4px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    display: block; /* Removes tiny invisible bottom gaps */
+    display: block;
+    
+    /* 5. THE BLENDING MAGIC */
+    /* Makes white backgrounds transparent so it blends into the gradient */
+    mix-blend-mode: multiply;
+    
+    /* Important: Remove shadows/radius so it looks like part of the card */
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }
 
 /* Ensure text stays grounded at the bottom */
 .research-text {
-    margin-top: 0;
-    flex-shrink: 0; /* Prevents text from getting squished */
+    margin-top: auto; /* Pushes text to the bottom if needed */
+    flex-shrink: 0;
+    padding: 0 10px;
 }
 
 /* Hover Effect */
 .research-card:hover {
     transform: translateY(-10px);
+}
+/* Slight fade on the image link on hover */
+.paper-preview a:hover {
+    opacity: 0.7;
 }
