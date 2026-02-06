@@ -807,3 +807,59 @@ a.cv-link i {
     font-size: 1.1rem !important;
     color: inherit !important;
 }
+
+/* --- RESEARCH CARD ALIGNMENT FIX --- */
+
+.research-card {
+    /* Flexbox Layout to control vertical spacing */
+    display: flex;
+    flex-direction: column;
+    
+    /* Style Basics */
+    background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
+    border-radius: 20px;
+    padding: 30px; /* Internal breathing room */
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    
+    /* Ensures all cards are the same height */
+    height: 100%; 
+    min-height: 450px; /* Adjust this if cards feel too short/tall */
+}
+
+.paper-preview {
+    /* THE FIX: Takes up all available vertical space */
+    flex: 1; 
+    
+    /* Center the image inside this space */
+    display: flex;
+    justify-content: center; /* Horizontal Center */
+    align-items: center;     /* Vertical Center */
+    
+    width: 100%;
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+/* Ensure the image link container works with the centering */
+.paper-preview a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.paper-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Card */
+.research-card:hover {
+    transform: translateY(-10px);
+}
