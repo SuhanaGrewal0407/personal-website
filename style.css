@@ -863,15 +863,19 @@ a.cv-link i {
 }
 
 .paper-preview img {
-    /* Controls the size of the paper */
-    width: 180px; /* Fixed width ensures they all look uniform */
+    /* ENLARGE: Use percentage so they grow with the card, up to a max point */
+    width: 85%; 
+    max-width: 350px; /* Ensures they don't get too crazy big on huge screens */
     height: auto;
     
-    /* Makes it look like a clean paper */
-    background-color: white; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-    border-radius: 2px;
+    /* REMOVE OUTLINE: Get rid of shadow, background, and rounded corners */
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+    
     display: block;
+    margin: 0 auto; /* Ensures centering */
 }
 
 /* --- TEXT AT BOTTOM --- */
