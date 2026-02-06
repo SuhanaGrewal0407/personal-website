@@ -750,3 +750,43 @@ padding: 0px 60px 150px;
 .image-wrapper:hover .bw-img {
     opacity: 0;
 }
+
+/* ==================================================== */
+/* --- FINAL POLISH: FIX LINKS & IMAGES --- */
+/* ==================================================== */
+
+/* 1. FIX THE TEXT (Remove Underline & Make White) */
+.research-text a {
+    color: white !important;       /* Force text white */
+    text-decoration: none !important; /* Remove underline */
+    border-bottom: none !important;   /* Safety check */
+}
+
+/* Optional: Slight fade when you hover over the text */
+.research-text a:hover {
+    opacity: 0.8; 
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* 2. FIX THE IMAGES (Make them Fit) */
+.paper-preview img {
+    /* 'contain' means: Show the whole image, don't cut it off, don't stretch it. */
+    object-fit: contain !important; 
+    
+    /* Ensure it sits in the center of the white box */
+    object-position: center !important;
+    
+    /* Remove any weird gray borders */
+    border: none !important;
+    
+    /* Ensure the white box itself stays white */
+    background-color: white !important;
+}
+
+/* 3. ENSURE THE WHITE BOX IS CENTERED */
+.paper-preview {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
