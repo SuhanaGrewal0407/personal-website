@@ -390,32 +390,32 @@ padding: 0px 60px 150px;
 }
 
 
-/* --- RESEARCH SECTION: "FIRST IMAGE" LOOK --- */
+/* --- RESEARCH SECTION: EXACT MATCH TO REFERENCE IMAGE --- */
 
+/* 1. The Grid: Standard spacing, 3 equal columns */
 .research-grid {
     display: grid;
-    /* Keeps the columns balanced but not too wide */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; /* Tighter gap like the first image */
+    gap: 30px; /* Tighter gap matches the "First Image" look */
     align-items: stretch;
     padding: 20px 0;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
-/* Individual Card Styling */
+/* 2. The Card: Tall, Elegant Rectangle */
 .research-card {
     display: flex;
     flex-direction: column;
     
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
     border-radius: 20px;
-    padding: 30px 25px; /* Standard padding */
+    padding: 35px 25px; /* Balanced padding */
     color: white;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     
-    /* Forces them to be tall rectangles, matching your first screenshot */
-    min-height: 500px; 
+    /* CRITICAL: Forces the tall rectangular shape */
+    min-height: 520px; 
     box-sizing: border-box;
     transition: transform 0.3s ease;
 }
@@ -424,52 +424,79 @@ padding: 0px 60px 150px;
     transform: translateY(-10px);
 }
 
-/* --- THE IMAGE CONTAINER --- */
+/* 3. The Image Container: Centers the paper in the space */
 .paper-preview {
-    /* Grows to fill the empty space, centering the image */
-    flex: 1; 
+    flex: 1; /* Pushes image to the vertical center */
     display: flex;
     align-items: center; 
     justify-content: center;
     
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    
+    /* Zero borders on container */
+    border: none;
+    outline: none;
 }
 
-/* --- THE IMAGE ITSELF (Strict Uniformity) --- */
+/* 4. Link Wrapper: Invisible */
+.paper-preview a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+/* 5. The Image: STRICTLY UNIFORM & CLEAN */
 .paper-preview img {
-    /* Fixed pixel size to ensure 100% equality across all cards */
-    width: 180px; 
-    height: 250px; 
+    /* Fixed pixel size = Perfect Uniformity */
+    width: 190px;  
+    height: 270px; 
     
-    /* Crop nicely if the image file is a different ratio */
+    /* Ensures the image fits without squishing */
     object-fit: cover; 
     object-position: top;
     
-    /* The "Clean Paper" Look */
+    /* The "Clean Paper" Look (Shadow only, no border) */
     background-color: white; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25); 
     border-radius: 2px;
     
-    /* No borders */
+    /* Nuclear option to kill borders */
     border: none !important;
     outline: none !important;
     display: block;
     margin: 0 auto;
 }
 
-/* --- TEXT STYLING --- */
+/* Hover Effect: Slight lift */
+.paper-preview a:hover img {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* 6. Text Styling */
 .research-text {
     flex-shrink: 0;
     margin-top: auto;
-    font-size: 0.95rem; /* Clean, readable size */
+    font-family: 'Avenir Next', 'Inter', sans-serif;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+.research-text strong {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* 7. Mobile Responsiveness */
 @media (max-width: 900px) {
     .research-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 40px;
     }
 }
 /* --- EXPERIENCE CAROUSEL STYLES --- */
