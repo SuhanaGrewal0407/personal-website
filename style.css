@@ -392,101 +392,124 @@ padding: 0px 60px 150px;
 
 /* --- RESEARCH SECTION: EXACT MATCH TO REFERENCE IMAGE --- */
 
-/* ========================================= */
-/* --- FINAL DEFINITIVE RESEARCH SECTION --- */
-/* ========================================= */
+/* ================================================= */
+/* --- FINAL FIXED RESEARCH SECTION (Strict Mode) --- */
+/* ================================================= */
 
-/* 1. The Grid Layout */
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
-    gap: 30px;
-    align-items: stretch; /* Forces all cards to same height */
-    padding: 20px 0;
+    /* Forces 3 equal columns */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Standard clean spacing */
+    align-items: stretch;
     margin-top: 40px;
+    padding-bottom: 40px;
 }
 
-/* 2. The Tall Card Container */
 .research-card {
     display: flex;
     flex-direction: column;
+    
+    /* The Gradient */
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
-    border-radius: 20px;
-    padding: 35px 25px;
-    color: white;
+    
+    /* Shape & Spacing */
+    border-radius: 24px;
+    padding: 30px 20px; /* Vertical padding, tighter side padding */
+    
+    /* Forces Tall Rectangle Shape */
+    min-height: 600px; 
+    
     text-align: center;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    min-height: 520px; /* Ensures tall elegance */
-    box-sizing: border-box;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    position: relative;
     transition: transform 0.3s ease;
 }
 
 .research-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
-/* 3. The Image Centering Container */
+/* --- THE IMAGE CONTAINER --- */
+/* This invisible box takes up all the empty space to center the image */
 .paper-preview {
-    flex: 1; /* Takes up all empty vertical space */
+    flex: 1;
     display: flex;
-    align-items: center;     /* Centers vertically */
-    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    margin-bottom: 25px;
-    border: none; outline: none;
+    margin-bottom: 20px;
 }
 
-/* Link wrapper reset */
-.paper-preview a { display: block; border: none; outline: none; }
+.paper-preview a {
+    display: block;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
 
-/* 4. THE IMAGE FIX (Rounded & Equal Sized) */
+/* --- THE WHITE BOXES (Strictly Equal & Rounded) --- */
 .paper-preview img {
-    /* FORCE EXACT UNIFORM SIZE */
-    width: 200px !important;
-    height: 280px !important;
+    /* 1. FORCE EXACT SIZE (This fixes the alignment) */
+    width: 240px !important;
+    height: 320px !important;
     
-    /* FORCE ROUNDED CORNERS */
+    /* 2. FORCE ROUNDING */
     border-radius: 15px !important;
-
-    /* Ensure image fills the rounded box nicely */
-    object-fit: cover !important;
-    object-position: top center !important;
-
-    /* Visual Polish (White pop) */
-    background-color: #ffffff !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25) !important;
+    
+    /* 3. VISUAL STYLE */
+    object-fit: cover; /* Ensures image fills the box without stretching */
+    object-position: top; /* Shows the title part of the paper */
+    background-color: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25); /* The "Float" shadow */
+    
+    /* Remove any old borders */
     border: none !important;
     outline: none !important;
     display: block;
-    margin: 0 auto;
 }
 
-/* Hover scale effect */
+/* Hover Effect */
 .paper-preview a:hover img {
-    transform: scale(1.03);
+    transform: scale(1.02);
     transition: transform 0.3s ease;
 }
 
-/* 5. Text Styling */
+/* --- TEXT STYLING --- */
 .research-text {
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents text from squishing */
     margin-top: auto;
-    font-family: 'Avenir Next', 'Inter', sans-serif;
-    line-height: 1.5;
-    font-size: 0.95rem;
-}
-.research-text strong {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 8px;
+    padding: 0 10px;
 }
 
-/* 6. Mobile */
-@media (max-width: 900px) {
+.research-text strong {
+    font-family: 'Avenir Next', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.research-text a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 1024px) {
     .research-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack them on smaller screens */
         gap: 40px;
+    }
+    
+    .paper-preview img {
+        width: 200px !important; /* Slightly smaller on mobile */
+        height: 280px !important;
     }
 }
 
