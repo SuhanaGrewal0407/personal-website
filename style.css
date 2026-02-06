@@ -1,4 +1,7 @@
- /*
+/* ====================================================== */
+/* --- RESTORED CSS (Your Original Design) --- */
+/* ====================================================== */
+
 html {
     scroll-behavior: smooth;
 }
@@ -27,11 +30,11 @@ header {
     padding: 20px 60px;
     color: white;
     
-    /* NEW: Sticky Positioning */
+    /* Sticky Positioning */
     position: sticky;
     top: 0;
-    z-index: 100; /* Keeps it above other content */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+    z-index: 100; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
 }
 
 .logo {
@@ -62,23 +65,17 @@ nav a:hover {
 /* Hero Section Styling */
 .hero-section {
    min-height: 100vh;
-    
-    /* 2. Vertically Center the content */
     display: flex;
     align-items: center; 
-    justify-content: center; /* Centers the wrapper horizontally */
-    
-    /* 3. Padding to account for the sticky header */
+    justify-content: center; 
     padding: 80px 20px 0; 
-    
     background-color: #E6F7FA;
 }
 
 .content-wrapper {
     max-width: 1100px; 
-    /* Removed the large top margin so it sits higher up again */
     margin: 0 auto; 
-width: 100%
+    width: 100%
 }
 
 /* Typography */
@@ -86,9 +83,7 @@ h1 {
     font-family: 'Bodoni Moda', serif;
     font-size: 6.5rem; 
     font-weight: 550; 
-    
     margin-bottom: 5px; 
-    
     line-height: 1.1;
     color: #1A1A1A;
     display: flex; 
@@ -101,20 +96,13 @@ h1 {
     font-family: 'Borel', cursive; 
     font-weight: 400;
     font-style: normal;
-    
     font-size: 1em; 
-    
-    /* FIX FOR CUT OFF 'L' & 'l' */
-    /* We increase line-height and add padding to expand the "mask" vertically */
     line-height: 1.1; 
-    padding-top: 0.5em;    /* Room for top loops */
-    padding-bottom: 0.1em; /* Room for bottom loops */
-    padding-right: 0.5em;  /* Room for right tails */
-
-    
-margin-bottom: -0.2em;
+    padding-top: 0.5em;    
+    padding-bottom: 0.1em; 
+    padding-right: 0.5em;  
+    margin-bottom: -0.2em;
     margin-left: -12px; 
-    /* Negative margin compensates for the extra padding to keep alignment perfect */
     margin-top: -0.2em; 
     
     background: linear-gradient(90deg, #9D50FF 0%, #3B82F6 50%, #00D2A0 100%);
@@ -126,7 +114,6 @@ margin-bottom: -0.2em;
     overflow: hidden; 
     white-space: nowrap; 
     width: 0; 
-    
     animation: typing 6s infinite; 
 }
 
@@ -143,10 +130,8 @@ margin-bottom: -0.2em;
 
 .intro-text {
     font-size: 1.25rem;
-    line-height: 1.6;
-    
+    line-height: 1.6; 
     margin-bottom: 30px; 
-    
     color: #333;
     max-width: 550px;
 }
@@ -157,12 +142,10 @@ margin-bottom: -0.2em;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    
     background: linear-gradient(90deg, #9D50FF 0%, #3B82F6 50%, #00D2A0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 15px;
@@ -193,7 +176,7 @@ margin-bottom: -0.2em;
     0% { width: 0; }
     40% { width: 100%; } 
     90% { width: 100%; } 
-    100% { width: 0; }   
+    100% { width: 0; }    
 }
 
 @media (max-width: 768px) {
@@ -202,11 +185,9 @@ margin-bottom: -0.2em;
         flex-direction: column;
         gap: 15px;
     }
-    
     .hero-section {
         padding: 60px 20px;
     }
-    
     h1 {
         font-size: 3.5rem; 
         flex-wrap: wrap; 
@@ -214,15 +195,11 @@ margin-bottom: -0.2em;
 }
 
 /* --- ABOUT SECTION STYLES --- */
-
-/* --- PASTE THIS AT THE VERY BOTTOM OF YOUR CSS FILE --- */
-
-/* ABOUT SECTION STYLES */
 .about-section {
     padding: 20px 60px 100px;
     background-color: #E6F7FA;
     min-height: 100vh;
-scroll-margin-top: 65px;
+    scroll-margin-top: 65px;
 }
 
 .container {
@@ -236,8 +213,6 @@ scroll-margin-top: 65px;
     font-size: 6.5rem;
     font-weight: 600;
     margin-bottom: 20px;
-    
-    /* Matches Header Gradient */
     background: linear-gradient(90deg, #9D50FF 0%, #3B82F6 50%, #00D2A0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -250,7 +225,7 @@ scroll-margin-top: 65px;
     align-items: flex-start;
 }
 
-/* Image Column for your Canva Pic */
+/* Image Column */
 .image-column {
     flex: 1;
     display: flex;
@@ -269,7 +244,7 @@ scroll-margin-top: 65px;
     flex: 1.3;
 }
 
-/* Bio Text: Avenir Next */
+/* Bio Text */
 .bio-text {
     font-family: 'Avenir Next', 'Inter', sans-serif;
     font-size: 1.1rem;
@@ -286,9 +261,7 @@ scroll-margin-top: 65px;
 .gradient-divider {
     height: 2px;
     background: linear-gradient(90deg, #9D50FF 0%, #00D2A0 100%);
-    
     margin: 15px 0;
-    
     border-radius: 2px;
 }
 
@@ -358,31 +331,15 @@ scroll-margin-top: 65px;
 @media (max-width: 900px) {
     header { padding: 20px; }
     .hero-section { padding: 120px 20px 60px; }
-    
-    .about-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .canva-profile-img {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .section-title {
-        font-size: 3.5rem;
-        text-align: center;
-    }
-    
-    .info-grid {
-        flex-direction: column;
-        gap: 30px;
-    }
+    .about-content { flex-direction: column; gap: 40px; }
+    .canva-profile-img { max-width: 400px; margin: 0 auto; }
+    .section-title { font-size: 3.5rem; text-align: center; }
+    .info-grid { flex-direction: column; gap: 30px; }
 }
 
-/* ======================================= */
-/* --- RESEARCH SECTION (Clean & Uniform) --- */
-/* ======================================= */
+/* ======================================================== */
+/* --- RESEARCH SECTION (FIXED: NO STRETCH, NO BOLD) --- */
+/* ======================================================== */
 
 .research-section {
     padding: 0 60px 150px;
@@ -439,23 +396,22 @@ scroll-margin-top: 65px;
     text-decoration: none;
 }
 
-/* --- THE PAPER IMAGE (Strict Uniformity & No Stretching) --- */
+/* --- THE IMAGE FIX: CONTAIN --- */
 .paper-preview img {
-    /* 1. WIDTH & SHAPE: Defines the uniform white box */
-    width: 75% !important;
-    max-width: 260px; 
-    aspect-ratio: 0.7 !important;
+    /* 1. Size of the White Box */
+    width: 85%;
+    max-width: 280px;
+    aspect-ratio: 0.75; /* A standard paper ratio */
     
-    /* 2. THE FIX: 'contain' fits the image inside without stretching */
-    object-fit: contain !important;
+    /* 2. CRITICAL FIX: 'contain' ensures no stretching */
+    object-fit: contain !important; 
     object-position: center !important;
     
-    /* 3. PAPER LOOK: White background + Shadow */
+    /* 3. The Paper Look (White background shows behind the image) */
     background-color: white !important;
     box-shadow: 0 15px 30px rgba(0,0,0,0.25) !important;
     border-radius: 4px !important;
     
-    /* 4. CLEAN UP */
     border: none !important;
     outline: none !important;
     display: block;
@@ -482,12 +438,9 @@ scroll-margin-top: 65px;
     font-weight: 600; 
     font-size: 1.15rem;
     display: block;
-    
-    /* REDUCED SPACING (was 10px) */
+    /* REDUCED SPACING */
     margin-bottom: 4px; 
-    
     line-height: 1.2;
-};
 }
 
 .research-text a {
@@ -503,16 +456,15 @@ scroll-margin-top: 65px;
         grid-template-columns: 1fr; /* Stack cards on phone */
         gap: 50px;
     }
-    
     .research-card {
         min-height: 500px; /* Slightly shorter cards on phone */
     }
-
     .paper-preview img {
         width: 60% !important; /* Smaller image on phone */
     }
 }
 
+/* --- EXPERIENCE SECTION --- */
 .experience-section {
     padding: 0 60px 150px;
     background-color: #E6F7FA;
@@ -529,7 +481,7 @@ scroll-margin-top: 65px;
 /* The window that hides the overflow */
 .carousel-track-container {
     overflow: hidden;
-    padding: 30px 4px; /* Tiny horizontal padding to prevent shadow clipping */
+    padding: 30px 4px; 
     width: 100%;
     box-sizing: border-box;
 }
@@ -545,13 +497,10 @@ scroll-margin-top: 65px;
 /* Individual Card Styling */
 .experience-card {
     box-sizing: border-box;
-    
-    /* FORCE 3 CARDS PER ROW: */
-    /* (100% width - 40px for the 2 gaps) divided by 3 */
+    /* FORCE 3 CARDS PER ROW */
     flex: 0 0 calc((100% - 40px) / 3);
     max-width: calc((100% - 40px) / 3);
-    min-width: 0; /* Prevents flex items from getting stuck */
-    
+    min-width: 0; 
     padding: 40px 30px;
     border-radius: 20px;
     position: relative;
@@ -562,7 +511,6 @@ scroll-margin-top: 65px;
     font-family: 'Avenir Next', 'Inter', sans-serif;
     color: #1A1A1A;
     transition: all 0.4s ease;
-    
     display: flex;
     flex-direction: column;
 }
@@ -574,7 +522,7 @@ scroll-margin-top: 65px;
     margin-bottom: 5px;
     text-align: center;
     line-height: 1.3;
-    min-height: 3.4rem; /* Keeps titles aligned */
+    min-height: 3.4rem; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -650,28 +598,22 @@ scroll-margin-top: 65px;
     .experience-section {
         padding: 0 20px 100px;
     }
-    
     .carousel-track {
         gap: 20px;
     }
-    
-    /* Only switch to 1 big card if screen is small */
     .experience-card {
         flex: 0 0 100%;
         max-width: 100%;
     }
-    
-    /* Bring buttons closer on mobile */
     .prev-btn { left: -10px; }
     .next-btn { right: -10px; }
 }
 
 /* --- FOOTER STYLES --- */
-
 .site-footer {
     padding: 60px 0;
-    background-color: #E6F7FA; /* Matches the background of your last section */
-    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle line to separate it */
+    background-color: #E6F7FA; 
+    border-top: 1px solid rgba(0, 0, 0, 0.05); 
 }
 
 .footer-container {
@@ -685,12 +627,11 @@ scroll-margin-top: 65px;
 
 .footer-item {
     font-family: 'Avenir Next', 'Inter', sans-serif;
-    color: #888; /* Light grey as seen in your screenshot */
+    color: #888; 
     font-size: 0.95rem;
     letter-spacing: 0.02em;
 }
 
-/* Make the email link look like regular text */
 .footer-item a {
     color: inherit;
     text-decoration: none;
@@ -698,10 +639,9 @@ scroll-margin-top: 65px;
 }
 
 .footer-item a:hover {
-    color: #1A1A1A; /* Darkens slightly when hovered */
+    color: #1A1A1A; 
 }
 
-/* Center name styling */
 .name-item {
     color: #666;
     font-weight: 400;
@@ -722,9 +662,7 @@ scroll-margin-top: 65px;
 }
 
 /* --- PROFILE IMAGE HOVER & RESOLUTION FIX --- */
-
 .image-column {
-    /* Centers the image in the column */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -733,29 +671,23 @@ scroll-margin-top: 65px;
 .image-wrapper {
     position: relative;
     width: 100%;
-    
-    /* RESOLUTION FIX: Prevents the image from stretching too big and getting blurry */
     max-width: 450px; 
-    
-    /* Ensures the wrapper fits the content */
-    aspect-ratio: 1 / 1; /* Optional: Adjust if your images are rectangles */
+    aspect-ratio: 1 / 1; 
 }
 
 .profile-img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 20px; /* Rounded corners to match your design */
-    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+    border-radius: 20px; 
+    transition: opacity 0.5s ease-in-out; 
 }
 
-/* The B&W image sits on top (z-index 2) */
 .bw-img {
     position: relative;
     z-index: 2;
 }
 
-/* The Color image sits underneath (z-index 1) */
 .color-img {
     position: absolute;
     top: 0;
@@ -763,76 +695,32 @@ scroll-margin-top: 65px;
     z-index: 1;
 }
 
-/* HOVER EFFECT: Fade out the B&W image */
 .image-wrapper:hover .bw-img {
     opacity: 0;
 }
 
-/* --- CORRECTED FIX FOR RESEARCH LINKS --- */
-
-/* 1. TEXT LINKS: Force White always (Normal & Hover) */
-.research-text a {
-    color: #ffffff !important;      /* Always White */
-    text-decoration: none !important; /* No Underline */
-    font-weight: normal;
-    border: none;
-    transition: opacity 0.3s ease;
-}
-
-/* On hover, just fade slightly (Do NOT turn purple) */
-.research-text a:hover {
-    color: #ffffff !important;      /* Keep White */
-    opacity: 0.8;                   /* Subtle fade effect */
-    text-decoration: none !important;
-}
-
-/* 2. IMAGE LINKS: Fix Alignment */
-.paper-preview a {
-    display: flex;             /* This acts like a container */
-    justify-content: center;   /* This centers the image inside it */
-    width: 100%;               /* Ensures it fills the space to center properly */
-    text-decoration: none;
-    border: none;
-    transition: opacity 0.3s ease;
-}
-
-/* Fade image slightly on hover */
-.paper-preview a:hover {
-    opacity: 0.8;
-}
-
-/* Ensure the image itself behaves */
-.paper-preview a img {
-    display: block;
-    margin: 0 auto; /* Extra safety to force centering */
-}
-
-/* --- CV LINK STYLING (FORCE OVERRIDE) --- */
+/* --- CV LINK STYLING --- */
 a.cv-link {
     display: inline-flex !important;
     align-items: center !important;
     gap: 10px !important;
-    
-    text-decoration: none !important; /* Kills the underline */
-    color: #9D50FF !important;        /* Forces Purple */
-    font-weight: 700 !important;      /* Forces Bold */
+    text-decoration: none !important; 
+    color: #9D50FF !important;        
+    font-weight: 700 !important;      
     font-size: 1.2rem !important;
     border: none !important;
 }
 
-/* Ensure it stays purple even after you click it */
 a.cv-link:visited {
     color: #9D50FF !important;
 }
 
-/* Hover Effect */
 a.cv-link:hover {
-    color: #00D2A0 !important; /* Turns Green */
+    color: #00D2A0 !important; 
     transform: translateY(-2px);
     cursor: pointer;
 }
 
-/* Fix the icon size */
 a.cv-link i {
     font-size: 1.1rem !important;
     color: inherit !important;
