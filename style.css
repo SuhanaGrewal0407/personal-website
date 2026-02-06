@@ -810,79 +810,77 @@ a.cv-link i {
 
 /* --- FINAL RESEARCH CARD FIX (Centered & Blended) --- */
 
+/* --- RESEARCH GRID (Forces Equal Height) --- */
 .research-grid {
     display: grid;
-    /* This ensures all cards in a row are naturally the same height */
+    /* This creates the columns */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    align-items: stretch; /* Crucial for equal height columns */
+    
+    /* CRITICAL: This forces all cards in a row to stretch to the tallest one's height */
+    align-items: stretch; 
 }
 
+/* --- RESEARCH CARD (Flex Layout) --- */
 .research-card {
-    /* 1. Flexbox Layout to stack image over text */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks image on top of text */
     
-    /* 2. Visuals */
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
     border-radius: 20px;
-    padding: 30px 20px; /* Slightly less side padding for the blend effect */
+    padding: 30px; 
     color: white;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
     
-    /* 3. Sizing: Ensures they are tall enough to center nicely */
-    height: auto;
-    min-height: 500px; 
+    /* CRITICAL: Ensures the card fills the grid slot */
+    height: 100%; 
+    box-sizing: border-box; 
+    
+    transition: transform 0.3s ease;
 }
 
+/* --- IMAGE CONTAINER (The Spacer) --- */
 .paper-preview {
-    /* 4. THE CENTERING MAGIC */
-    /* grow to fill space */
+    /* This makes the container "grow" to fill all empty vertical space */
     flex: 1; 
+    
+    /* This aligns the image in the dead center of that space */
     display: flex;
-    /* center vertically and horizontally */
     align-items: center; 
     justify-content: center;
     
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    min-height: 200px; /* Ensures there is always space for the image */
 }
 
-/* Reset the link container */
+/* --- THE IMAGE ITSELF --- */
 .paper-preview a {
     display: inline-block;
-    width: 85%; /* Controls how wide the paper appears */
-    transition: opacity 0.3s ease;
+    width: auto; 
+    max-width: 100%;
 }
 
 .paper-preview img {
-    width: 100%;
+    /* Controls the size of the paper */
+    width: 180px; /* Fixed width ensures they all look uniform */
     height: auto;
+    
+    /* Makes it look like a clean paper */
+    background-color: white; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
+    border-radius: 2px;
     display: block;
-    
-    /* 5. THE BLENDING MAGIC */
-    /* Makes white backgrounds transparent so it blends into the gradient */
-    mix-blend-mode: multiply;
-    
-    /* Important: Remove shadows/radius so it looks like part of the card */
-    box-shadow: none !important;
-    border-radius: 0 !important;
 }
 
-/* Ensure text stays grounded at the bottom */
+/* --- TEXT AT BOTTOM --- */
 .research-text {
-    margin-top: auto; /* Pushes text to the bottom if needed */
-    flex-shrink: 0;
-    padding: 0 10px;
+    /* Prevents text from pushing the image weirdly */
+    flex-shrink: 0; 
 }
 
 /* Hover Effect */
 .research-card:hover {
     transform: translateY(-10px);
-}
-/* Slight fade on the image link on hover */
-.paper-preview a:hover {
-    opacity: 0.7;
 }
