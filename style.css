@@ -426,29 +426,51 @@ padding: 0px 60px 150px;
 }
 
 /* The Paper Screenshot Container */
+/* --- PREVIEW CONTAINER (Center Alignment) --- */
 .paper-preview {
-    background: white;
-    padding: 8px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    
-    /* CHANGED: Reduced from 90% to 80% to make the image box shorter */
-    width: 80%; 
-    
-    aspect-ratio: 3 / 4; 
+    flex: 1; /* Pushes content to fill vertical space */
     display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-    overflow: hidden;
+    align-items: center;     /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
     
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 0; /* Tiny breathing room top/bottom */
 }
 
+/* --- THE CLICKABLE LINK WRAPPER --- */
+.paper-preview a {
+    display: block; /* Allows full width */
+    width: 100%;    /* Forces it to fill the container */
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+/* --- THE IMAGE ITSELF (Enlarged & Clean) --- */
 .paper-preview img {
-   width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    border: 1px solid #eee;
+    /* ENLARGE: Fills the width of the card */
+    width: 100%; 
+    height: auto;
+    
+    /* REMOVE OUTLINE: No borders, no shadows, no background */
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    border-radius: 4px; /* Slight rounding for polish, remove if you want sharp corners */
+    
+    display: block;
+    margin: 0 auto;
+    
+    /* Optional: If images are low-res, prevent them from getting pixelated */
+    max-width: 400px; 
+}
+
+/* Hover Effect: Slight lift instead of color change */
+.paper-preview a:hover img {
+    transform: scale(1.02); /* Subtle zoom effect */
+    transition: transform 0.3s ease;
 }
 
 /* The Text Description */
