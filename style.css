@@ -777,33 +777,33 @@ padding: 0px 60px 150px;
     margin: 0 auto; /* Extra safety to force centering */
 }
 
-/* --- CV LINK STYLING (FIXED) --- */
-.cv-link {
-    text-decoration: none !important; /* Forces removal of underline */
-    color: #9D50FF !important;        /* Forces Purple color */
-    font-weight: 700;                 /* Bold text */
-    font-size: 1.1rem;
+/* --- CV LINK STYLING (FORCE OVERRIDE) --- */
+a.cv-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
     
-    /* Aligns the icon and text */
-    display: inline-flex;
-    align-items: center;
-    gap: 10px; 
-    
-    transition: all 0.3s ease;
+    text-decoration: none !important; /* Kills the underline */
+    color: #9D50FF !important;        /* Forces Purple */
+    font-weight: 700 !important;      /* Forces Bold */
+    font-size: 1.2rem !important;
+    border: none !important;
 }
 
-/* Ensures visited links don't turn blue/purple */
-.cv-link:visited {
+/* Ensure it stays purple even after you click it */
+a.cv-link:visited {
     color: #9D50FF !important;
 }
 
-/* Hover Effect: Turns Green and lifts up */
-.cv-link:hover {
-    color: #00D2A0 !important; 
+/* Hover Effect */
+a.cv-link:hover {
+    color: #00D2A0 !important; /* Turns Green */
     transform: translateY(-2px);
+    cursor: pointer;
 }
 
-/* Style the icon specifically */
-.cv-link i {
-    font-size: 1.2rem;
+/* Fix the icon size */
+a.cv-link i {
+    font-size: 1.1rem !important;
+    color: inherit !important;
 }
