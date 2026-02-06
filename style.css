@@ -478,11 +478,16 @@ scroll-margin-top: 65px;
 }
 
 .research-text strong {
-    font-weight: 600;
+    /* REDUCED BOLDNESS (was 700) */
+    font-weight: 600; 
     font-size: 1.15rem;
     display: block;
-    margin-bottom: 10px;
-    line-height: 1.3;
+    
+    /* REDUCED SPACING (was 10px) */
+    margin-bottom: 4px; 
+    
+    line-height: 1.2;
+};
 }
 
 .research-text a {
