@@ -390,17 +390,13 @@ padding: 0px 60px 150px;
 }
 
 
-/* --- FINAL RESEARCH SECTION (Wide Spacing & Clean Paper Look) --- */
+/* --- FINAL RESEARCH SECTION (Tall Cards & Equal Images) --- */
 
 .research-grid {
     display: grid;
-    /* Forces exactly 3 equal columns */
+    /* Forces 3 equal columns */
     grid-template-columns: repeat(3, 1fr); 
-    
-    /* WIDE GAP: 50px spacing between cards */
     gap: 50px; 
-    
-    /* Ensures all cards stretch to the same height */
     align-items: stretch;
     padding: 20px 0;
     margin-top: 30px;
@@ -413,15 +409,13 @@ padding: 0px 60px 150px;
     
     background: linear-gradient(135deg, #9D50FF 0%, #00D2A0 100%);
     border-radius: 20px;
-    
-    /* More internal padding so content isn't cramped */
-    padding: 40px 30px; 
-    
+    padding: 40px 30px;
     color: white;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     
-    height: 100%;
+    /* FIX: Force them to be TALL rectangles, not squares */
+    min-height: 550px; 
     box-sizing: border-box;
     transition: transform 0.3s ease;
 }
@@ -432,20 +426,16 @@ padding: 0px 60px 150px;
 
 /* --- THE PREVIEW CONTAINER --- */
 .paper-preview {
-    flex: 1; /* Pushes image to center of empty space */
+    flex: 1; 
     display: flex;
     align-items: center; 
     justify-content: center;
-    
     width: 100%;
     margin-bottom: 30px;
-    
-    /* Clean container: no borders */
     border: none;
     outline: none;
 }
 
-/* --- THE CLICKABLE LINK --- */
 .paper-preview a {
     display: block;
     width: 100%;
@@ -454,26 +444,27 @@ padding: 0px 60px 150px;
     outline: none;
 }
 
-/* --- THE IMAGE (Clean Paper Style) --- */
+/* --- THE IMAGE (Strictly Equal Sizing) --- */
 .paper-preview img {
-    /* 85% width gives it that nice margin inside the card */
-    width: 85%; 
-    height: auto;
+    /* FIX: Fixed pixel dimensions guarantee equality */
+    width: 200px; 
+    height: 280px; 
     
-    /* THE PAPER LOOK: White background + Soft Shadow */
+    /* Ensures the image fills that box without stretching weirdly */
+    object-fit: cover; 
+    object-position: top; /* Shows the top of the paper (title) */
+    
+    /* The Paper Look */
     background-color: white; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
-    border-radius: 2px; /* Tiny rounding like real paper */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25); 
+    border-radius: 2px;
     
-    /* REMOVING OUTLINES */
     border: none !important;
     outline: none !important;
-    
     display: block;
     margin: 0 auto;
 }
 
-/* Hover Effect for Image */
 .paper-preview a:hover img {
     transform: scale(1.02);
     transition: transform 0.3s ease;
@@ -491,17 +482,18 @@ padding: 0px 60px 150px;
 
 .research-text strong {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     display: block;
-    margin-bottom: 10px; /* Adjusted spacing for title */
+    margin-bottom: 12px;
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 900px) {
     .research-grid {
-        /* Switch to 1 column on phones */
-        grid-template-
-
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
 /* --- EXPERIENCE CAROUSEL STYLES --- */
 
 .experience-section {
