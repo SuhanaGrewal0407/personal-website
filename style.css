@@ -776,3 +776,34 @@ padding: 0px 60px 150px;
     display: block;
     margin: 0 auto; /* Extra safety to force centering */
 }
+
+/* --- CV LINK STYLING (FIXED) --- */
+.cv-link {
+    text-decoration: none !important; /* Forces removal of underline */
+    color: #9D50FF !important;        /* Forces Purple color */
+    font-weight: 700;                 /* Bold text */
+    font-size: 1.1rem;
+    
+    /* Aligns the icon and text */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; 
+    
+    transition: all 0.3s ease;
+}
+
+/* Ensures visited links don't turn blue/purple */
+.cv-link:visited {
+    color: #9D50FF !important;
+}
+
+/* Hover Effect: Turns Green and lifts up */
+.cv-link:hover {
+    color: #00D2A0 !important; 
+    transform: translateY(-2px);
+}
+
+/* Style the icon specifically */
+.cv-link i {
+    font-size: 1.2rem;
+}
