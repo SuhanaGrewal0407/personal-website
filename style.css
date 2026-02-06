@@ -737,3 +737,45 @@ padding: 0px 60px 150px;
 .image-wrapper:hover .bw-img {
     opacity: 0;
 }
+
+/* --- RESEARCH PAPER LINKS --- */
+.paper-link {
+    text-decoration: none;
+    color: inherit; /* Keeps text black */
+    transition: color 0.3s ease;
+}
+
+.paper-link:hover {
+    color: #9D50FF; /* Turns purple on hover */
+    text-decoration: underline;
+}
+
+/* Optional: Make the image fade slightly on hover so users know it's clickable */
+.paper-preview a img {
+    transition: opacity 0.3s ease;
+}
+
+.paper-preview a:hover img {
+    opacity: 0.8;
+}
+
+/* --- CV LINK STYLING --- */
+.cv-link {
+    text-decoration: none; /* Removes the underline */
+    color: #9D50FF;        /* Sets it to your Purple */
+    font-weight: 600;      /* Makes it bold */
+    font-size: 1.1rem;
+    
+    /* Aligns the icon and text perfectly */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect: Turns Green and lifts up */
+.cv-link:hover {
+    color: #00D2A0; 
+    transform: translateY(-2px);
+}
